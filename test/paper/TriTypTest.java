@@ -468,4 +468,38 @@ public class TriTypTest {
 		Assert.assertEquals(4, instance.j);
 		Assert.assertEquals(5, instance.k);
 	}
+	
+	@Test
+	public void testTypeLastElseWithJEqualsK() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(2);
+		instance.setJ(1);
+		instance.setK(1);
+		instance.type();
+		Assert.assertEquals(4, instance.trityp);
+	}
+	
+	@Test
+	public void testTypeLastElseWithIEqualsK() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(1);
+		instance.setJ(2);
+		instance.setK(1);
+		instance.type();
+		Assert.assertEquals(4, instance.trityp);
+	}
+	
+	@Test
+	public void testTypeLastElseWithIEqualsJ() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(1);
+		instance.setJ(1);
+		instance.setK(2);
+		instance.type();
+		Assert.assertEquals(4, instance.trityp);
+	}
+	
 }
