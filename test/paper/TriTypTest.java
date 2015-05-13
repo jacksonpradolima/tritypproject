@@ -502,4 +502,125 @@ public class TriTypTest {
 		Assert.assertEquals(4, instance.trityp);
 	}
 	
+	@Test
+	public void testTypeOnlyZero() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(0);
+		instance.setJ(0);
+		instance.setK(0);
+		instance.type();
+		Assert.assertEquals(4, instance.trityp);
+	}
+	
+	@Test
+	public void testTypeSequential() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(10);
+		instance.setJ(11);
+		instance.setK(12);
+		instance.type();
+		Assert.assertEquals(1, instance.trityp);
+	}
+	
+	@Test
+	public void testTypeSequential1() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(12);
+		instance.setJ(11);
+		instance.setK(10);
+		instance.type();
+		Assert.assertEquals(1, instance.trityp);
+	}
+	
+	@Test
+	public void testTypeSequential12() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(11);
+		instance.setJ(12);
+		instance.setK(10);
+		instance.type();
+		Assert.assertEquals(1, instance.trityp);
+	}
+	
+	@Test
+	public void testTypeSequential122222() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(11);
+		instance.setJ(10);
+		instance.setK(12);
+		instance.type();
+		Assert.assertEquals(1, instance.trityp);
+	}
+	
+	@Test
+	public void testTypeWithINegative() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(-10);
+		instance.setJ(10);
+		instance.setK(10);
+		instance.type();
+		Assert.assertEquals(4, instance.trityp);
+	}
+	
+	@Test
+	public void testTypeWithJNegative() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(10);
+		instance.setJ(-10);
+		instance.setK(10);
+		instance.type();
+		Assert.assertEquals(4, instance.trityp);
+	}
+	
+	@Test
+	public void testTypeWithKNegative() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(10);
+		instance.setJ(10);
+		instance.setK(-10);
+		instance.type();
+		Assert.assertEquals(4, instance.trityp);
+	}
+	
+//	@Test
+//	public void testType2222() {
+//		TriTyp instance = new TriTyp();
+//		instance = new TriTyp();
+//		instance.setI(2);
+//		instance.setJ(2);
+//		instance.setK(10);
+//		instance.type();
+//		Assert.assertEquals(2, instance.trityp);
+//	}
+//	
+//	@Test
+//	public void testType22223() {
+//		TriTyp instance = new TriTyp();
+//		instance = new TriTyp();
+//		instance.setI(2);
+//		instance.setJ(10);
+//		instance.setK(2);
+//		instance.type();
+//		Assert.assertEquals(2, instance.trityp);
+//	}
+//	
+//	@Test
+//	public void testType222234() {
+//		TriTyp instance = new TriTyp();
+//		instance = new TriTyp();
+//		instance.setI(10);
+//		instance.setJ(2);
+//		instance.setK(2);
+//		instance.type();
+//		Assert.assertEquals(2, instance.trityp);
+//	}
+	
 }
