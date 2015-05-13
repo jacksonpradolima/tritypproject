@@ -455,4 +455,17 @@ public class TriTypTest {
 		instance.type();
 		Assert.assertEquals(2, instance.trityp);
 	}
+	
+	@Test
+	public void testTypeShouldntReplaceIJKValuesAfterCallType() {
+		TriTyp instance = new TriTyp();
+		instance = new TriTyp();
+		instance.setI(3);
+		instance.setJ(4);
+		instance.setK(5);
+		instance.type();
+		Assert.assertEquals(3, instance.i);
+		Assert.assertEquals(4, instance.j);
+		Assert.assertEquals(5, instance.k);
+	}
 }
