@@ -40,205 +40,237 @@ public class TriTypTest {
     public void tearDown() {
     }
     
-    /**
-     * Constructor Test 
-     */
-	@Test
-	public void testConstructor() {
+   @Test
+	public void testConstructorForIVariable() {
 		TriTyp instance = new TriTyp();
-
-		// Default values
 		Assert.assertEquals(0, instance.i);
-		Assert.assertEquals(0, instance.j);
-		Assert.assertEquals(0, instance.k);
-
-		Assert.assertEquals(0, instance.trityp);
-		Assert.assertEquals(1, TriTyp.SCALENE);
-		Assert.assertEquals(2, TriTyp.ISOSCELES);
-		Assert.assertEquals(3, TriTyp.EQUILATERAL);
-		Assert.assertEquals(4, TriTyp.NOT_A_TRIANGLE);
 	}
 
-    /**
-     * Test of setI method, of class TriTyp.
-     */
 	@Test
-	public void testSetI() {
+	public void testConstructorForJVariable() {
 		TriTyp instance = new TriTyp();
+		Assert.assertEquals(0, instance.j);
+	}
 
-		// Negative values
+	@Test
+	public void testConstructorForKVariable() {
+		TriTyp instance = new TriTyp();
+		Assert.assertEquals(0, instance.k);
+	}
+
+	@Test
+	public void testConstructorForTriTypVariable() {
+		TriTyp instance = new TriTyp();
+		Assert.assertEquals(0, instance.trityp);
+	}			
+	
+	@Test
+	public void testStaticValuesScalene() {
+		Assert.assertEquals(1, TriTyp.SCALENE);
+	}
+	
+	@Test
+	public void testStaticValuesIsosceles() {
+		Assert.assertEquals(2, TriTyp.ISOSCELES);
+	}
+	
+	@Test
+	public void testStaticValuesEquilateral() {
+		Assert.assertEquals(3, TriTyp.EQUILATERAL);
+	}
+	
+	@Test
+	public void testStaticValuesNotATriangle() {
+		Assert.assertEquals(4, TriTyp.NOT_A_TRIANGLE);
+	}
+	
+    @Test
+	public void testeSetIForNegativeValues() {
+		TriTyp instance = new TriTyp();
 		instance.setI(-10);
 		Assert.assertEquals(-10, instance.i);
-
-		// Zero
+	}
+	
+	@Test
+	public void testeSetIForZeroValues(){
+		TriTyp instance = new TriTyp();
 		instance.setI(0);
 		Assert.assertEquals(0, instance.i);
-
-		// Positive values
+	}
+	
+	@Test
+	public void testeSetIForPositiveValues(){
+		TriTyp instance = new TriTyp();
 		instance.setI(10);
 		Assert.assertEquals(10, instance.i);
-
-		// Limit values
+	}
+	
+	@Test
+	public void testeSetIForMaxIntegerValues(){
+		TriTyp instance = new TriTyp();
 		instance.setI(Integer.MAX_VALUE);
 		Assert.assertEquals(Integer.MAX_VALUE, instance.i);
+	}
+	
+	@Test
+	public void testeSetIForMinIntegerValues(){
+		TriTyp instance = new TriTyp();
 		instance.setI(Integer.MIN_VALUE);
 		Assert.assertEquals(Integer.MIN_VALUE, instance.i);
 	}
-    
-	/**
-	 * Test of setJ method, of class TriTyp.
-	 */
+		
 	@Test
-	public void testSetJ() {
+	public void testeSetJForNegativeValues() {
 		TriTyp instance = new TriTyp();
-
-		// Negative values
 		instance.setJ(-10);
 		Assert.assertEquals(-10, instance.j);
-
-		// Zero
+	}
+	
+	@Test
+	public void testeSetJForZeroValues(){
+		TriTyp instance = new TriTyp();
 		instance.setJ(0);
 		Assert.assertEquals(0, instance.j);
-
-		// Positive values
+	}
+	
+	@Test
+	public void testeSetJForPositiveValues(){
+		TriTyp instance = new TriTyp();
 		instance.setJ(10);
 		Assert.assertEquals(10, instance.j);
-
-		// Limit values
+	}
+	
+	@Test
+	public void testeSetJForMaxIntegerValues(){
+		TriTyp instance = new TriTyp();
 		instance.setJ(Integer.MAX_VALUE);
 		Assert.assertEquals(Integer.MAX_VALUE, instance.j);
+	}
+	
+	@Test
+	public void testeSetJForMinIntegerValues(){
+		TriTyp instance = new TriTyp();
 		instance.setJ(Integer.MIN_VALUE);
 		Assert.assertEquals(Integer.MIN_VALUE, instance.j);
 	}
     
-	/**
-	 * Test of setK method, of class TriTyp.
-	 */
 	@Test
-	public void testSetK() {
+	public void testeSetKForNegativeValues() {
 		TriTyp instance = new TriTyp();
-
-		// Negative values
 		instance.setK(-10);
 		Assert.assertEquals(-10, instance.k);
-
-		// Zero
+	}
+	
+	@Test
+	public void testeSetKForZeroValues(){
+		TriTyp instance = new TriTyp();
 		instance.setK(0);
 		Assert.assertEquals(0, instance.k);
-
-		// Positive values
+	}
+	
+	@Test
+	public void testeSetKForPositiveValues(){
+		TriTyp instance = new TriTyp();
 		instance.setK(10);
 		Assert.assertEquals(10, instance.k);
-
-		// Limit values
+	}
+	
+	@Test
+	public void testeSetKForMaxIntegerValues(){
+		TriTyp instance = new TriTyp();
 		instance.setK(Integer.MAX_VALUE);
 		Assert.assertEquals(Integer.MAX_VALUE, instance.k);
+	}
+	
+	@Test
+	public void testeSetKForMinIntegerValues(){
+		TriTyp instance = new TriTyp();
 		instance.setK(Integer.MIN_VALUE);
 		Assert.assertEquals(Integer.MIN_VALUE, instance.k);
 	}
     
-    /**
-     * toSring Test 
-     */
-	@Test
-	public void testToString() {
+    @Test
+	public void testToStringDontCallTypeMethod() {
 		TriTyp instance = new TriTyp();
-
-		// Not null or empty
-		Assert.assertNotNull(instance.toString());
-		Assert.assertNotEquals(0, instance.toString().length());
-
-		// Should be having only 0 values
-		Assert.assertEquals("0-0-0: 0", instance.toString());
-
-		// Should be following the same patterns
-		String pattern = "[-]?\\d+-[-]?\\d+-[-]?\\d+: \\d+";
-		Assert.assertTrue(instance.toString().matches(pattern));
-
-		// Don't call type method
 		instance = new TriTyp();
 		instance.setI(1);
 		instance.setJ(1);
 		instance.setK(1);
-		Assert.assertEquals("1-1-1: 0", instance.toString());
-
-		// EQUILATERAL
-		instance = new TriTyp();
-		instance.setI(3);
-		instance.setJ(3);
-		instance.setK(3);
-		instance.type();
-		Assert.assertEquals("3-3-3: 3", instance.toString());
-
-		// SCALENE
-		instance = new TriTyp();
-		instance.setI(13);
-		instance.setJ(9);
-		instance.setK(14);
-		instance.type();
-		Assert.assertEquals("13-9-14: 1", instance.toString());
-
-		// ISOSCELES
-		instance = new TriTyp();
-		instance.setI(13);
-		instance.setJ(13);
-		instance.setK(10);
-		instance.type();
-		Assert.assertEquals("13-13-10: 2", instance.toString());
-
-		// NOT_A_TRIANGLE
-		instance.setI(-3);
-		instance.setJ(3);
-		instance.setK(3);
-		instance.type();
-
-		Assert.assertEquals("-3-3-3: 4", instance.toString());
+		Assert.assertEquals("1-1-1: 0", instance.toString());	
 	}
-    
-    /**
-     * equals Test 
-     */
+	
 	@Test
-	public void testEquals() {
+	public void testToStringNotNull() {
+		TriTyp instance = new TriTyp();
+		Assert.assertNotNull(instance.toString());
+	}
+	
+	@Test
+	public void testToStringNotEmpty() {
+		TriTyp instance = new TriTyp();
+		Assert.assertNotEquals(0, instance.toString().length());
+	}
+	
+	@Test
+	public void testToStringShouldBeHavingOnlyZeroValues() {
+		TriTyp instance = new TriTyp();
+		Assert.assertEquals("0-0-0: 0", instance.toString());
+	}
+	
+	@Test
+	public void testToStringShouldBeHavingTheSamePatterns() {
+		TriTyp instance = new TriTyp();
+		String pattern = "[-]?\\d+-[-]?\\d+-[-]?\\d+: \\d+";
+		instance.setI(1);
+		instance.setJ(2);
+		instance.setK(3);
+		Assert.assertTrue(instance.toString().matches(pattern));
+		instance.setI(1);
+		instance.setJ(-2);
+		instance.setK(3);
+		Assert.assertTrue(instance.toString().matches(pattern));	
+	}
+   
+	@Test
+	public void testEqualsWithSameIValue() {
 		TriTyp instanceOne = new TriTyp();
 		TriTyp instanceTwo = new TriTyp();
-
-		// Different types
-		Assert.assertFalse(instanceOne.equals(new Object()));
-		Assert.assertFalse(instanceTwo.equals(new Object()));
-		Assert.assertFalse(instanceTwo.equals(null));
-
-		// Default initialization
-		Assert.assertTrue(instanceOne.equals(instanceTwo));
-		Assert.assertTrue(instanceTwo.equals(instanceOne));
-
-		// Same "i" value
 		instanceOne = new TriTyp();
 		instanceTwo = new TriTyp();
 		instanceOne.setI(1);
 		instanceTwo.setI(1);
 		Assert.assertTrue(instanceOne.equals(instanceTwo));
 		Assert.assertTrue(instanceTwo.equals(instanceOne));
-
-		// Same "j" value
+	}
+	
+	@Test
+	public void testEqualsWithSameJValue() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
 		instanceOne = new TriTyp();
 		instanceTwo = new TriTyp();
 		instanceOne.setJ(2);
 		instanceTwo.setJ(2);
 		Assert.assertTrue(instanceOne.equals(instanceTwo));
 		Assert.assertTrue(instanceTwo.equals(instanceOne));
-
-		// Same "k" value
+	}
+	
+	@Test
+	public void testEqualsWithSameKValue() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
 		instanceOne = new TriTyp();
 		instanceTwo = new TriTyp();
 		instanceOne.setK(3);
 		instanceTwo.setK(3);
 		Assert.assertTrue(instanceOne.equals(instanceTwo));
 		Assert.assertTrue(instanceTwo.equals(instanceOne));
-
-		// Same values
-		instanceOne = new TriTyp();
-		instanceTwo = new TriTyp();
+	}
+	
+	@Test
+	public void testEqualsWithSameValuesNoTypeMethod() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
 		instanceOne.setI(1);
 		instanceOne.setJ(2);
 		instanceOne.setK(3);
@@ -247,16 +279,28 @@ public class TriTypTest {
 		instanceTwo.setK(3);
 		Assert.assertTrue(instanceOne.equals(instanceTwo));
 		Assert.assertTrue(instanceTwo.equals(instanceOne));
-
-		// Call type method for same values
+	}
+	
+	@Test
+	public void testEqualsWithSameValuesWithTypeMethod() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
+		instanceOne.setI(1);
+		instanceOne.setJ(2);
+		instanceOne.setK(3);
 		instanceOne.type();
+		instanceTwo.setI(1);
+		instanceTwo.setJ(2);
+		instanceTwo.setK(3);
 		instanceTwo.type();
 		Assert.assertTrue(instanceOne.equals(instanceTwo));
 		Assert.assertTrue(instanceTwo.equals(instanceOne));
-
-		// Different values
-		instanceOne = new TriTyp();
-		instanceTwo = new TriTyp();
+	}
+	
+	@Test
+	public void testEqualsWithDifferentValuesNoTypeMethod() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
 		instanceOne.setI(1);
 		instanceOne.setJ(2);
 		instanceOne.setK(3);
@@ -265,11 +309,90 @@ public class TriTypTest {
 		instanceTwo.setK(1);
 		Assert.assertFalse(instanceOne.equals(instanceTwo));
 		Assert.assertFalse(instanceTwo.equals(instanceOne));
-
-		// Call type method for different values
+	}
+	
+	@Test
+	public void testEqualsWithDifferentValuesWithTypeMethod() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
+		instanceOne.setI(1);
+		instanceOne.setJ(2);
+		instanceOne.setK(3);
 		instanceOne.type();
+		instanceTwo.setI(3);
+		instanceTwo.setJ(2);
+		instanceTwo.setK(1);
 		instanceTwo.type();
 		Assert.assertFalse(instanceOne.equals(instanceTwo));
 		Assert.assertFalse(instanceTwo.equals(instanceOne));
+	}
+	
+	@Test
+	public void testEqualsWithObject() {
+		TriTyp instance = new TriTyp();		
+		Assert.assertFalse(instance.equals(new Object()));
+	}
+	
+	@Test
+	public void testEqualsWithNullValue() {
+		TriTyp instance = new TriTyp();
+		Assert.assertFalse(instance.equals(null));	
+	}
+	
+	@Test
+	public void testEqualsDefaultInitialization() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
+		Assert.assertTrue(instanceOne.equals(instanceTwo));
+		Assert.assertTrue(instanceTwo.equals(instanceOne));
+	}
+	
+	@Test
+	public void testEqualsWhereOnlyOneHasTypeMethod() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
+		instanceOne.setI(1);
+		instanceOne.setJ(2);
+		instanceOne.setK(3);
+		instanceOne.type();	// Only this
+		instanceTwo.setI(1);
+		instanceTwo.setJ(2);
+		instanceTwo.setK(3);
+		Assert.assertFalse(instanceOne.equals(instanceTwo));
+		Assert.assertFalse(instanceTwo.equals(instanceOne));
+	}
+	
+	public void teste(){
+		TriTyp instance = new TriTyp();
+		// EQUILATERAL
+				instance = new TriTyp();
+				instance.setI(3);
+				instance.setJ(3);
+				instance.setK(3);
+				instance.type();
+				Assert.assertEquals("3-3-3: 3", instance.toString());
+
+				// SCALENE
+				instance = new TriTyp();
+				instance.setI(13);
+				instance.setJ(9);
+				instance.setK(14);
+				instance.type();
+				Assert.assertEquals("13-9-14: 1", instance.toString());
+
+				// ISOSCELES
+				instance = new TriTyp();
+				instance.setI(13);
+				instance.setJ(13);
+				instance.setK(10);
+				instance.type();
+				Assert.assertEquals("13-13-10: 2", instance.toString());
+
+				// NOT_A_TRIANGLE
+				instance.setI(-3);
+				instance.setJ(3);
+				instance.setK(3);
+				instance.type();
+				Assert.assertEquals("-3-3-3: 4", instance.toString());
 	}
 }
