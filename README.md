@@ -8,3 +8,5 @@ Classe TriTyp e testes unitários que devem ser utilizados nas seguintes ferrame
  - Jaboti
  - MuJava
 
+Versão do Java Utilizado:
+ - Java 7 Oracle
