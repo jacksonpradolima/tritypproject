@@ -230,6 +230,38 @@ public class TriTypTest {
 		instance.setK(3);
 		Assert.assertTrue(instance.toString().matches(pattern));
 	}
+	
+	@Test
+	public void testToStringMayNotReplaceTheValueI(){
+		TriTyp instance = new TriTyp();
+		instance.toString();
+		Assert.assertEquals(0, instance.i);
+	}
+	
+	@Test
+	public void testToStringMayNotReplaceTheValueJ(){
+		TriTyp instance = new TriTyp();
+		instance.toString();
+		Assert.assertEquals(0, instance.j);
+	}
+	
+	@Test
+	public void testToStringMayNotReplaceTheValueK(){
+		TriTyp instance = new TriTyp();
+		instance.toString();
+		Assert.assertEquals(0, instance.k);
+	}	
+	
+	@Test
+	public void testToStringMayNotReplaceTheValueTriTyp(){
+		TriTyp instance = new TriTyp();
+		instance.setI(60);
+		instance.setJ(60);
+		instance.setK(60);
+		instance.type();
+		instance.toString();
+		Assert.assertEquals(3, instance.trityp);
+	}
 
 	@Test
 	public void testEqualsWithSameIValue() {
@@ -411,6 +443,54 @@ public class TriTypTest {
 	}
 	
 	@Test
+	public void testEqualsSameIAndJAndTrityp() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
+		instanceOne.setI(5);
+		instanceOne.setJ(5);
+		instanceOne.setK(3);
+		instanceOne.type();
+		instanceTwo.setI(5);
+		instanceTwo.setJ(5);
+		instanceTwo.setK(2);
+		instanceTwo.type();
+		Assert.assertFalse(instanceOne.equals(instanceTwo));
+		Assert.assertFalse(instanceTwo.equals(instanceOne));
+	}
+	
+	@Test
+	public void testEqualsSameJAndKAndTrityp() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
+		instanceOne.setI(2);
+		instanceOne.setJ(5);
+		instanceOne.setK(5);
+		instanceOne.type();
+		instanceTwo.setI(3);
+		instanceTwo.setJ(5);
+		instanceTwo.setK(5);
+		instanceTwo.type();
+		Assert.assertFalse(instanceOne.equals(instanceTwo));
+		Assert.assertFalse(instanceTwo.equals(instanceOne));
+	}
+	
+	@Test
+	public void testEqualsSameIAndKAndTrityp() {
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
+		instanceOne.setI(5);
+		instanceOne.setJ(2);
+		instanceOne.setK(5);
+		instanceOne.type();
+		instanceTwo.setI(5);
+		instanceTwo.setJ(3);
+		instanceTwo.setK(5);
+		instanceTwo.type();
+		Assert.assertFalse(instanceOne.equals(instanceTwo));
+		Assert.assertFalse(instanceTwo.equals(instanceOne));
+	}
+	
+	@Test
 	public void testEqualsSameJAndTrityp() {
 		TriTyp instanceOne = new TriTyp();
 		TriTyp instanceTwo = new TriTyp();
@@ -422,8 +502,8 @@ public class TriTypTest {
 		instanceTwo.setJ(5);
 		instanceTwo.setK(4);
 		instanceTwo.type();
-		System.out.println(instanceOne);
-		System.out.println(instanceTwo);
+//		System.out.println(instanceOne);
+//		System.out.println(instanceTwo);
 		Assert.assertFalse(instanceOne.equals(instanceTwo));
 		Assert.assertFalse(instanceTwo.equals(instanceOne));
 	}
@@ -476,6 +556,44 @@ public class TriTypTest {
 		Assert.assertFalse(instanceTwo.equals(instanceOne));
 	}
 	
+	@Test
+	public void testEqualsMayNotReplaceTheValueI(){
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();		
+		instanceOne.equals(instanceTwo);
+		Assert.assertEquals(0, instanceOne.i);
+		Assert.assertEquals(0, instanceTwo.i);
+	}
+	
+	@Test
+	public void testEqualsMayNotReplaceTheValueJ(){
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();		
+		instanceOne.equals(instanceTwo);
+		Assert.assertEquals(0, instanceOne.j);
+		Assert.assertEquals(0, instanceTwo.j);
+	}
+	
+	@Test
+	public void testEqualsMayNotReplaceTheValueK(){
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
+		
+		instanceOne.equals(instanceTwo);
+		Assert.assertEquals(0, instanceOne.k);
+		Assert.assertEquals(0, instanceTwo.k);
+	}
+	
+	@Test
+	public void testEqualsMayNotReplaceTheValueTriTyp(){
+		TriTyp instanceOne = new TriTyp();
+		TriTyp instanceTwo = new TriTyp();
+		
+		instanceOne.equals(instanceTwo);
+		Assert.assertEquals(0, instanceOne.trityp);
+		Assert.assertEquals(0, instanceTwo.trityp);
+	}
+		
 	@Test
 	public void testTypeNotATriangleDefaultValues() {
 		TriTyp instance = new TriTyp();
