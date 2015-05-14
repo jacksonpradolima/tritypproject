@@ -966,4 +966,63 @@ public class TriTypTest {
 		Assert.assertEquals(2, instance.trityp);
 	}
 	
+	@Test
+	public void testTypeMayNotReplaceTheValuesOne(){
+		TriTyp instance = new TriTyp();
+		instance.setI(5);
+		instance.setJ(4);
+		instance.setK(5);
+		instance.type();
+		Assert.assertEquals(5, instance.i);
+		Assert.assertEquals(4, instance.j);
+		Assert.assertEquals(5, instance.k);
+	}
+	
+	@Test
+	public void testTypeMayNotReplaceTheValuesFour(){
+		TriTyp instance = new TriTyp();
+		instance.setI(3);
+		instance.setJ(5);
+		instance.setK(5);
+		instance.type();
+		Assert.assertEquals(3, instance.i);
+		Assert.assertEquals(5, instance.j);
+		Assert.assertEquals(5, instance.k);
+	}
+	
+	@Test
+	public void testTypeMayNotReplaceTheValuesTwo(){
+		TriTyp instance = new TriTyp();
+		instance.setI(3);
+		instance.setJ(4);
+		instance.setK(5);
+		instance.type();
+		Assert.assertEquals(3, instance.i);
+		Assert.assertEquals(4, instance.j);
+		Assert.assertEquals(5, instance.k);
+	}
+	
+	@Test
+	public void testTypeMayNotReplaceTheValuesThree(){
+		TriTyp instance = new TriTyp();
+		instance.setI(5);
+		instance.setJ(5);
+		instance.setK(5);
+		instance.type();
+		Assert.assertEquals(5, instance.i);
+		Assert.assertEquals(5, instance.j);
+		Assert.assertEquals(5, instance.k);
+	}
+	
+	@Test
+	public void testTypeMayNotReplaceTheValuesFive(){
+		TriTyp instance = new TriTyp();
+		instance.setI(5);
+		instance.setJ(5);
+		instance.setK(4);
+		instance.type();
+		Assert.assertEquals(5, instance.i);
+		Assert.assertEquals(5, instance.j);
+		Assert.assertEquals(4, instance.k);
+	}
 }
